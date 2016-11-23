@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Vote!</title>
+</head>
+<body>
+	<p> {{ poll.question }}</p>
+	{% if choice %}
+	<form method="post" action="" id="voteForm"> {% csrf_toke %}
+		<fieldset>
+			{% for choice in choice %}
+				<p><input type="radio" name="choice" id="choice" value="{{ choice.id }}" />
+				<label for="choice{{ forloop.counter > {{ choice.choice }} </label></p>
+			{% endfor %}
+			
+			<input type="submit" id="submit" value="Submit" />
+		</fieldset>
+	</form>
+	{% else %}
+	<p class="noChoice"> No votes have been added to this poll yet!</p>
+	{% endif %}
+
+</body>
+</html>

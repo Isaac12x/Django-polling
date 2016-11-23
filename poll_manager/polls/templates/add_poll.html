@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Add a Poll</title>
+</head>
+<body>
+
+    <p>Add a Poll</p>
+    <form name="addPoll" action="/add_choices/" method="post"> {% csrf_toke %}
+	<fieldset>
+		<label id="questionID" for="id_question">Question: </label> {{ form.question }}
+		<input id="submit" type="submit" value="Submit" />
+	</fieldset>
+    </form>
+</body>
+</html>

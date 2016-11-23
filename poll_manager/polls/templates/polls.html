@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Vote!</title>
+</head>
+<body>
+    <p>Here's a list of polls</p>
+    {% if poll_query %}
+	<ul>
+		{% for poll in poll_query %}
+			<li><a href="{{ poll.id }}/"> {{ poll.question }} </a></li>
+		{% endfor %}
+	</ul>
+
+	{% else %}
+		<p> there are no polls available</p>
+
+	{% endif %}
+
+</body>
+</html>

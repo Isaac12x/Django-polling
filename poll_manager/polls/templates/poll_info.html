@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Add a Poll</title>
+</head>
+<body>
+    <p><a href="add_choices/">Add choices</a></p>
+    <p><a href="vote/">Click here to vote</a></p>
+
+	{% for choice in choices %}
+		<p class="resultsList"> {{ choice.choice }} - {{ choice.votes_set.count }} </p>
+	{% endfor %}
+
+</body>
+</hmtl>
